@@ -1,19 +1,4 @@
-`timescale 1 ns / 1 ns // timescale for following modules
-
-//////////////////////////////////////////////////////////////////////////////////
-// // Engineer: Oguz Kaan Agac & Bora Ecer
-// 
-// Create Date: 13/12/2016
-// Design Name: Animation Logic
-// Module Name: anim_gen
-// Project Name: BASPONG
-// Target Devices: BASYS3
-// Description: 
-// Controller for the BASPONG
-// Dependencies: 
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
+`timescale 1 ns / 1 ns 
 
 module anim_gen (
    clk,
@@ -28,7 +13,9 @@ module anim_gen (
    video_on,
    rgb,
    score1,
-   score2);
+   score2,
+   player1_score_digit1, player1_score_digit2,player2_score_digit1,player2_score_digit2
+   );
  
 
 input clk; 
@@ -44,7 +31,14 @@ input video_on;
 output[2:0] rgb; 
 output score1; 
 output score2; 
-
+input player1_score_digit1;
+input player1_score_digit2;
+input player2_score_digit1;
+input player2_score_digit2;
+wire [3:0] player1_score_digit1;
+wire [3:0] player1_score_digit2;
+wire [3:0] player2_score_digit1;
+wire [3:0] player2_score_digit2;
 reg[2:0] rgb; 
 reg score1; 
 reg score2; 
@@ -86,6 +80,55 @@ parameter vertical_velocity = 3; //Vertical velocity of the ball
 wire display_ball; //to send ball to vga 
 wire[2:0] rgb_ball;//color 
 
+wire displayUpperText1;
+wire displayUpperText2;
+wire displayUpperText3;
+wire displayUpperText4;
+wire displayUpperText5;
+wire displayUpperText6;
+wire displayUpperText7;
+wire displayUpperText8;
+wire displayUpperText9;
+wire displayUpperText10;
+wire displayUpperText11;
+
+wire[7:0] upperText1Ascii;
+wire[7:0] upperText2Ascii;
+wire[7:0] upperText3Ascii;
+wire[7:0] upperText4Ascii;
+wire[7:0] upperText5Ascii;
+wire[7:0] upperText6Ascii;
+wire[7:0] upperText7Ascii;
+wire[7:0] upperText8Ascii;
+wire[7:0] upperText9Ascii;
+wire[7:0] upperText10Ascii;
+wire[7:0] upperText11Ascii;
+
+wire displayLowerText1;
+wire displayLowerText2;
+wire displayLowerText3;
+wire displayLowerText4;
+wire displayLowerText5;
+wire displayLowerText6;
+wire displayLowerText7;
+wire displayLowerText8;
+wire displayLowerText9;
+wire displayLowerText10;
+wire displayLowerText11;
+
+wire[7:0] lowerText1Ascii;
+wire[7:0] lowerText2Ascii;
+wire[7:0] lowerText3Ascii;
+wire[7:0] lowerText4Ascii;
+wire[7:0] lowerText5Ascii;
+wire[7:0] lowerText6Ascii;
+wire[7:0] lowerText7Ascii;
+wire[7:0] lowerText8Ascii;
+wire[7:0] lowerText9Ascii;
+wire[7:0] lowerText10Ascii;
+wire[7:0] lowerText11Ascii;
+
+
 // refresh
 integer refresh_reg; 
 integer refresh_next; 
@@ -102,8 +145,6 @@ integer vertical_velocity_next;
 wire[9:0] x; 
 wire[8:0] y; 
 
-// mux to display
-wire[3:0] output_mux; 
 
 // buffer
 reg[2:0] rgb_reg; 
@@ -297,22 +338,178 @@ assign display_ball = (x - ball_c_l) * (x - ball_c_l) + (y - ball_c_t) * (y - ba
 	1'b 0; 
 assign rgb_ball = 3'b 111; //color of ball: white
 
+// assign displayText1 = x > 100 & x < 120 & y > 100 & y < 120 ? 1'b 1 : 1'b 0;
+// assign displayText2 = x > 125 & x < 145 & y > 100 & y < 120 ? 1'b 1 : 1'b 0;
+// assign displayText3 = x > 150 & x < 170 & y > 100 & y < 120 ? 1'b 1 : 1'b 0;
+// assign displayText4 = x > 175 & x < 195 & y > 100 & y < 120 ? 1'b 1 : 1'b 0;
+// assign displayText5 = x > 200 & x < 220 & y > 100 & y < 120 ? 1'b 1 : 1'b 0;
+// assign displayText6 = x > 225 & x < 245 & y > 100 & y < 120 ? 1'b 1 : 1'b 0;
+// assign displayText7 = x > 250 & x < 270 & y > 100 & y < 120 ? 1'b 1 : 1'b 0;
+// assign displayText8 = x > 275 & x < 295 & y > 100 & y < 120 ? 1'b 1 : 1'b 0;
+// assign displayText9 = x > 300 & x < 320 & y > 100 & y < 120 ? 1'b 1 : 1'b 0;
+// assign displayText10 = x > 325 & x < 345 & y > 100 & y < 120 ? 1'b 1 : 1'b 0;
+assign displayUpperText1 = x > 100 & x < 140 & y > 100 & y < 140 ? 1'b 1 : 1'b 0;
+assign displayUpperText2 = x > 140 & x < 180 & y > 100 & y < 140 ? 1'b 1 : 1'b 0;
+assign displayUpperText3 = x > 180 & x < 220 & y > 100 & y < 140 ? 1'b 1 : 1'b 0;
+assign displayUpperText4 = x > 220 & x < 260 & y > 100 & y < 140 ? 1'b 1 : 1'b 0;
+assign displayUpperText5 = x > 260 & x < 300 & y > 100 & y < 140 ? 1'b 1 : 1'b 0;
+assign displayUpperText6 = x > 300 & x < 340 & y > 100 & y < 140 ? 1'b 1 : 1'b 0;
+assign displayUpperText7 = x > 340 & x < 380 & y > 100 & y < 140 ? 1'b 1 : 1'b 0;
+assign displayUpperText8 = x > 380 & x < 420 & y > 100 & y < 140 ? 1'b 1 : 1'b 0;
+assign displayUpperText9 = x > 420 & x < 460 & y > 100 & y < 140 ? 1'b 1 : 1'b 0;
+assign displayUpperText10 = x > 460 & x < 500 & y > 100 & y < 140 ? 1'b 1 : 1'b 0;
+assign displayUpperText11 = x > 500 & x < 540 & y > 100 & y < 140 ? 1'b 1 : 1'b 0;
+
+assign displayLowerText1 = x > 100 & x < 140 & y > 340 & y < 380 ? 1'b 1 : 1'b 0;
+assign displayLowerText2 = x > 140 & x < 180 & y > 340 & y < 380 ? 1'b 1 : 1'b 0;
+assign displayLowerText3 = x > 180 & x < 220 & y > 340 & y < 380 ? 1'b 1 : 1'b 0;
+assign displayLowerText4 = x > 220 & x < 260 & y > 340 & y < 380 ? 1'b 1 : 1'b 0;
+assign displayLowerText5 = x > 260 & x < 300 & y > 340 & y < 380 ? 1'b 1 : 1'b 0;
+assign displayLowerText6 = x > 300 & x < 340 & y > 340 & y < 380 ? 1'b 1 : 1'b 0;
+assign displayLowerText7 = x > 340 & x < 380 & y > 340 & y < 380 ? 1'b 1 : 1'b 0;
+assign displayLowerText8 = x > 380 & x < 420 & y > 340 & y < 380 ? 1'b 1 : 1'b 0;
+assign displayLowerText9 = x > 420 & x < 460 & y > 340 & y < 380 ? 1'b 1 : 1'b 0;
+assign displayLowerText10 = x > 460 & x < 500 & y > 340 & y < 380 ? 1'b 1 : 1'b 0;
+assign displayLowerText11 = x > 500 & x < 540 & y > 340 & y < 380 ? 1'b 1 : 1'b 0;
+
+wire player1_score;
+wire player2_score;
+assign player1_score = (player1_score_digit2 * 10) + player1_score_digit1;
+assign player2_score = (player2_score_digit2 * 10) + player2_score_digit1;
+
+wire lowerWinning = player1_score < player2_score;
+wire upperWinning = player1_score > player2_score;
+wire tie = player1_score === player2_score;
+wire gameEnd = player1_score > 99 || player2_score > 99;
+
+wire [11:0] player1_score_ascii1;
+wire [11:0] player1_score_ascii2;
+wire [11:0] player2_score_ascii1;
+wire [11:0] player2_score_ascii2;
+
+assign player1_score_ascii1 = player1_score_digit1 + 8'h30;
+assign player1_score_ascii2 = player1_score_digit2 + 8'h30;
+assign player2_score_ascii1 = player2_score_digit1 + 8'h30;
+assign player2_score_ascii2 = player2_score_digit2 + 8'h30;
+// assign lowerText1Ascii = lowerWinning ? 8'h4C : tie ? 8'h41 : 8'h4C; 
+assign upperText1Ascii  = gameEnd ? (upperWinning  ? 8'h45 : 8'h54) : upperWinning ? 8'h4C : tie ? 8'h41 : 8'h4C; //E or T or L or A or L
+assign upperText2Ascii  = gameEnd ? (upperWinning  ? 8'h5A : 8'h72) : upperWinning ? 8'h65 : tie ? 8'h6C : 8'h6F; //Z or r or e or l or o
+assign upperText3Ascii  = gameEnd ? (upperWinning  ? 8'h20 : 8'h79) : upperWinning ? 8'h61 : tie ? 8'h6C : 8'h73; //  or y or a or l or s
+assign upperText4Ascii  = gameEnd ? (upperWinning  ? 8'h57 : 8'h20) : upperWinning ? 8'h64 : tie ? 8'h55 : 8'h69; //W or   or d or U or i
+assign upperText5Ascii  = gameEnd ? (upperWinning  ? 8'h69 : 8'h48) : upperWinning ? 8'h69 : tie ? 8'h68 : 8'h6E; //i or H or i or h or n
+assign upperText6Ascii  = gameEnd ? (upperWinning  ? 8'h6E : 8'h61) : upperWinning ? 8'h6E : tie ? 8'h61 : 8'h67; //n or a or n or a or g
+assign upperText7Ascii  = gameEnd ? (upperWinning  ? 8'h20 : 8'h72) : upperWinning ? 8'h67 : tie ? 8'h76 : 8'h20; //  or r or g or v or  
+assign upperText8Ascii  = gameEnd ? (upperWinning  ? 8'h20 : 8'h64) : upperWinning ? 8'h20 : tie ? 8'h65 : 8'h20; //  or d or   or e or  
+assign upperText9Ascii  = gameEnd ? (upperWinning  ? 8'h20 : 8'h65) : upperWinning ? 8'h20 : tie ? 8'h3F : 8'h20; //  or e or   or ? or  
+assign upperText10Ascii = gameEnd ? (upperWinning  ? 8'h20 : 8'h72) : player1_score_ascii2       ; //  or r or 0 or 0 or 0
+assign upperText11Ascii = gameEnd ? (upperWinning  ? 8'h20 : 8'h20) : player1_score_ascii1       ; //  or   or 0 or 0 or 0
+
+assign lowerText1Ascii  = gameEnd ? (lowerWinning  ? 8'h45 : 8'h54) : lowerWinning ? 8'h4C : tie ? 8'h41 : 8'h4C; //E or T or L or A or L
+assign lowerText2Ascii  = gameEnd ? (lowerWinning  ? 8'h5A : 8'h72) : lowerWinning ? 8'h65 : tie ? 8'h6C : 8'h6F; //Z or r or e or l or o
+assign lowerText3Ascii  = gameEnd ? (lowerWinning  ? 8'h20 : 8'h79) : lowerWinning ? 8'h61 : tie ? 8'h6C : 8'h73; //  or y or a or l or s
+assign lowerText4Ascii  = gameEnd ? (lowerWinning  ? 8'h57 : 8'h20) : lowerWinning ? 8'h64 : tie ? 8'h55 : 8'h69; //W or   or d or U or i
+assign lowerText5Ascii  = gameEnd ? (lowerWinning  ? 8'h69 : 8'h48) : lowerWinning ? 8'h69 : tie ? 8'h68 : 8'h6E; //i or H or i or h or n
+assign lowerText6Ascii  = gameEnd ? (lowerWinning  ? 8'h6E : 8'h61) : lowerWinning ? 8'h6E : tie ? 8'h61 : 8'h67; //n or a or n or a or g
+assign lowerText7Ascii  = gameEnd ? (lowerWinning  ? 8'h20 : 8'h72) : lowerWinning ? 8'h67 : tie ? 8'h76 : 8'h20; //  or r or g or v or  
+assign lowerText8Ascii  = gameEnd ? (lowerWinning  ? 8'h20 : 8'h64) : lowerWinning ? 8'h20 : tie ? 8'h65 : 8'h20; //  or d or   or e or
+assign lowerText9Ascii  = gameEnd ? (lowerWinning  ? 8'h20 : 8'h65) : lowerWinning ? 8'h20 : tie ? 8'h3F : 8'h20; //  or e or   or ? or
+assign lowerText10Ascii = gameEnd ? (lowerWinning  ? 8'h20 : 8'h72) : player2_score_ascii1       ; //  or r or 0 or 0 or 0
+assign lowerText11Ascii = gameEnd ? (lowerWinning  ? 8'h20 : 8'h20) : player2_score_ascii2       ; //  or   or 0 or 0 or 0
+
+wire [2:0] upperText1;
+wire [2:0] upperText2;
+wire [2:0] upperText3;
+wire [2:0] upperText4;
+wire [2:0] upperText5;
+wire [2:0] upperText6;
+wire [2:0] upperText7;
+wire [2:0] upperText8;
+wire [2:0] upperText9;
+wire [2:0] upperText10;
+wire [2:0] upperText11;
+
+wire [2:0] lowerText1;
+wire [2:0] lowerText2;
+wire [2:0] lowerText3;
+wire [2:0] lowerText4;
+wire [2:0] lowerText5;
+wire [2:0] lowerText6;
+wire [2:0] lowerText7;
+wire [2:0] lowerText8;
+wire [2:0] lowerText9;
+wire [2:0] lowerText10;
+wire [2:0] lowerText11;
+
+char_rom char_rom1(upperText1Ascii, ((x - 100) % 40)/5, ((y - 100) % 40)/5, upperText1);
+char_rom char_rom2(upperText2Ascii, ((x - 140) % 40)/5, ((y - 100) % 40)/5, upperText2);
+char_rom char_rom3(upperText3Ascii, ((x - 180) % 40)/5, ((y - 100) % 40)/5, upperText3);
+char_rom char_rom4(upperText4Ascii, ((x - 220) % 40)/5, ((y - 100) % 40)/5, upperText4);
+char_rom char_rom5(upperText5Ascii, ((x - 260) % 40)/5, ((y - 100) % 40)/5, upperText5);
+char_rom char_rom6(upperText6Ascii, ((x - 300) % 40)/5, ((y - 100) % 40)/5, upperText6);
+char_rom char_rom7(upperText7Ascii, ((x - 340) % 40)/5, ((y - 100) % 40)/5, upperText7);
+char_rom char_rom8(upperText8Ascii, ((x - 380) % 40)/5, ((y - 100) % 40)/5, upperText8);
+char_rom char_rom9(upperText9Ascii, ((x - 420) % 40)/5, ((y - 100) % 40)/5, upperText9);
+char_rom char_rom10(upperText10Ascii, ((x - 460) % 40)/5, ((y - 100) % 40)/5, upperText10);
+char_rom char_rom11(upperText11Ascii, ((x - 500) % 40)/5, ((y - 100) % 40)/5, upperText11);
+
+char_rom char_rom12(lowerText1Ascii, ((x - 100) % 40)/5, ((y - 340) % 40)/5, lowerText1);
+char_rom char_rom13(lowerText2Ascii, ((x - 140) % 40)/5, ((y - 340) % 40)/5, lowerText2);
+char_rom char_rom14(lowerText3Ascii, ((x - 180) % 40)/5, ((y - 340) % 40)/5, lowerText3);
+char_rom char_rom15(lowerText4Ascii, ((x - 220) % 40)/5, ((y - 340) % 40)/5, lowerText4);
+char_rom char_rom16(lowerText5Ascii, ((x - 260) % 40)/5, ((y - 340) % 40)/5, lowerText5);
+char_rom char_rom17(lowerText6Ascii, ((x - 300) % 40)/5, ((y - 340) % 40)/5, lowerText6);
+char_rom char_rom18(lowerText7Ascii, ((x - 340) % 40)/5, ((y - 340) % 40)/5, lowerText7);
+char_rom char_rom19(lowerText8Ascii, ((x - 380) % 40)/5, ((y - 340) % 40)/5, lowerText8);
+char_rom char_rom20(lowerText9Ascii, ((x - 420) % 40)/5, ((y - 340) % 40)/5, lowerText9);
+char_rom char_rom21(lowerText10Ascii, ((x - 460) % 40)/5, ((y - 340) % 40)/5, lowerText10);
+char_rom char_rom22(lowerText11Ascii, ((x - 500) % 40)/5, ((y - 340) % 40)/5, lowerText11);
+
+
 
 always @(posedge clk)
    begin 
    rgb_reg <= rgb_next;   
    end
 
+// mux to display
+wire[3:0] output_mux; 
+wire showText = displayUpperText1 | displayUpperText2 | displayUpperText3 | displayUpperText4 | displayUpperText5 | displayUpperText6 | displayUpperText7 | displayUpperText8 | displayUpperText9 | displayUpperText10 | displayUpperText11 | displayLowerText1 | displayLowerText2 | displayLowerText3 | displayLowerText4 | displayLowerText5 | displayLowerText6 | displayLowerText7 | displayLowerText8 | displayLowerText9 | displayLowerText10 | displayLowerText11;
+
 // mux
 assign output_mux = {video_on, display_topbar, display_bottombar, display_ball}; 
 
 //assign rgb_next wrt output_mux.
-assign rgb_next = output_mux === 4'b 1000 ? 3'b 000 : 
+assign rgb_next =
+   (video_on && showText) ? 
+   (displayUpperText1 ? upperText1 :
+   displayUpperText2 ? upperText2 :
+   displayUpperText3 ? upperText3 :
+   displayUpperText4 ? upperText4 :
+   displayUpperText5 ? upperText5 :
+   displayUpperText6 ? upperText6 :
+   displayUpperText7 ? upperText7 :
+   displayUpperText8 ? upperText8 :
+   displayUpperText9 ? upperText9 :
+   displayUpperText10 ? upperText10 :
+   displayUpperText11 ? upperText11 :
+   displayLowerText1 ? lowerText1 :
+   displayLowerText2 ? lowerText2 :
+   displayLowerText3 ? lowerText3 :
+   displayLowerText4 ? lowerText4 :
+   displayLowerText5 ? lowerText5 :
+   displayLowerText6 ? lowerText6 :
+   displayLowerText7 ? lowerText7 :
+   displayLowerText8 ? lowerText8 :
+   displayLowerText9 ? lowerText9 :
+   displayLowerText10 ? lowerText10 :
+   lowerText11) :
+   output_mux === 4'b 1000 ? 3'b 000 : 
 	output_mux === 4'b 1100 ? rgb_bottombar : 
 	output_mux === 4'b 1101 ? rgb_bottombar : 
 	output_mux === 4'b 1010 ? rgb_topbar : 
 	output_mux === 4'b 1011 ? rgb_topbar : 
 	output_mux === 4'b 1001 ? rgb_ball : 
+   output_mux === 4'b 1111 ? rgb_ball :
 	3'b 000; 
 	
 

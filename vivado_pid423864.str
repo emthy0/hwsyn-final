@@ -157,3 +157,31 @@ Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // [GUI Memory]: 140 MB (+21965kb) [00:00:57]
 // [Engine Memory]: 1,244 MB (+41795kb) [00:00:57]
 // Tcl Message: open_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:30 . Memory (MB): peak = 1597.293 ; gain = 479.023 
+// Project name: Final; location: C:/Users/ironp/Project/basys3-riscv/RISCV_CPU/src/Final; part: xc7a35tcpg236-1
+dismissDialog("Open Project"); // bq
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// PAPropertyPanels.initPanels (main_control.sv) elapsed time: 0.5s
+// Elapsed time: 32 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, main_control (main_control.sv)]", 1, true); // E - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, main_control (main_control.sv)]", 1, true, false, false, false, false, true); // E - Double Click - Node
+// [GUI Memory]: 153 MB (+6353kb) [00:03:29]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,292 MB. GUI used memory: 83 MB. Current time: 12/7/23, 10:58:48 PM ICT
+// [GUI Memory]: 160 MB (+82kb) [00:38:16]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,292 MB. GUI used memory: 82 MB. Current time: 12/7/23, 11:28:48 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,292 MB. GUI used memory: 63 MB. Current time: 12/7/23, 11:58:49 PM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,292 MB. GUI used memory: 63 MB. Current time: 12/8/23, 12:28:49 AM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,292 MB. GUI used memory: 64 MB. Current time: 12/8/23, 12:58:52 AM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,292 MB. GUI used memory: 63 MB. Current time: 12/8/23, 1:28:52 AM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,292 MB. GUI used memory: 62 MB. Current time: 12/8/23, 1:58:53 AM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,292 MB. GUI used memory: 62 MB. Current time: 12/8/23, 2:28:53 AM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,292 MB. GUI used memory: 62 MB. Current time: 12/8/23, 2:58:53 AM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,292 MB. GUI used memory: 62 MB. Current time: 12/8/23, 3:28:54 AM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,292 MB. GUI used memory: 63 MB. Current time: 12/8/23, 3:58:54 AM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,292 MB. GUI used memory: 63 MB. Current time: 12/8/23, 4:28:55 AM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,292 MB. GUI used memory: 63 MB. Current time: 12/8/23, 4:58:55 AM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,292 MB. GUI used memory: 63 MB. Current time: 12/8/23, 5:28:55 AM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,292 MB. GUI used memory: 49 MB. Current time: 12/8/23, 5:58:59 AM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,292 MB. GUI used memory: 49 MB. Current time: 12/8/23, 6:29:02 AM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,292 MB. GUI used memory: 49 MB. Current time: 12/8/23, 6:59:06 AM ICT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,292 MB. GUI used memory: 49 MB. Current time: 12/8/23, 7:29:09 AM ICT

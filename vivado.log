@@ -78,3 +78,6 @@ INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'H:/Xilinz/Vivado/2023.1/data/ip'.
 open_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:30 . Memory (MB): peak = 1597.293 ; gain = 479.023
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Dec  7 22:31:20 2023...

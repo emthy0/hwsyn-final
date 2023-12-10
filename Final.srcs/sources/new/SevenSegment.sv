@@ -1,34 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 10/30/2016 05:12:46 PM
-// Design Name: 
-// Module Name: SevSeg_4digit
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
-// LED positions inside 7-segment
-//    A 
-//  F   B
-//    G
-//  E   C
-//    D      DP
-
-// digit positions on Basys3 :
-// in3(left), in2, in1, in0(right)
-
 
 
 module SevenSegment( input clk,

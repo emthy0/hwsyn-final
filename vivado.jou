@@ -13,3 +13,4 @@
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/ironp/Project/basys3-riscv/RISCV_CPU/src/Final/Final.xpr
+update_compile_order -fileset sources_1

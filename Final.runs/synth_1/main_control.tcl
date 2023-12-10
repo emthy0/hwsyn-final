@@ -70,13 +70,8 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param checkpoint.writeSynthRtdsInDcp 1
 set_param chipscope.maxJobs 8
-set_param synth.incrementalSynthesisCache C:/Users/ironp/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-286492-R9-5950X/incrSyn
 set_param xicom.use_bs_reader 1
-set_msg_config -id {Common 17-41} -limit 10000000
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
@@ -97,12 +92,11 @@ OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib -sv {
   C:/Users/ironp/Project/basys3-riscv/RISCV_CPU/src/Final/Final.srcs/sources/new/SevenSegment.sv
   C:/Users/ironp/Project/basys3-riscv/RISCV_CPU/src/Final/Final.srcs/sources/new/anim_gen.sv
+  C:/Users/ironp/Project/basys3-riscv/RISCV_CPU/src/Final/Final.srcs/sources/new/char_rom.sv
+  C:/Users/ironp/Project/basys3-riscv/RISCV_CPU/src/Final/Final.srcs/sources/new/controller.sv
+  C:/Users/ironp/Project/basys3-riscv/RISCV_CPU/src/Final/Final.srcs/sources/new/txrx.sv
   C:/Users/ironp/Project/basys3-riscv/RISCV_CPU/src/Final/Final.srcs/sources/new/vga.sv
   C:/Users/ironp/Project/basys3-riscv/RISCV_CPU/src/Final/Final.srcs/sources/new/main_control.sv
-}
-read_verilog -library xil_defaultlib {
-  C:/Users/ironp/Project/basys3-riscv/RISCV_CPU/src/Final/Final.srcs/sources_1/new/controller.v
-  C:/Users/ironp/Project/basys3-riscv/RISCV_CPU/src/Final/Final.srcs/sources_1/new/txrx.v
 }
 read_ip -quiet C:/Users/ironp/Project/basys3-riscv/RISCV_CPU/src/Final/Final.srcs/sources/ip/clk_wiz_0/clk_wiz_0.xci
 set_property used_in_implementation false [get_files -all c:/Users/ironp/Project/basys3-riscv/RISCV_CPU/src/Final/Final.srcs/sources/ip/clk_wiz_0/clk_wiz_0_board.xdc]
