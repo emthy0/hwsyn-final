@@ -72,7 +72,7 @@ integer ball_c_l; // the distance between the ball and left side of the screen
 integer ball_c_l_next; // the distance between the ball and left side of the screen 
 integer ball_c_t; // the distance between the ball and top side of the screen
 integer ball_c_t_next; // the distance between the ball and top side of the screen
-parameter ball_default_c_t = 300; // default value of the distance between the ball and left side of the screen
+parameter ball_default_c_t = 300; // default value of the distance between the ball and top side of the screen
 parameter ball_default_c_l = 300; // default value of the distance between the ball and left side of the screen
 parameter ball_r = 8; //radius of the ball.
 parameter horizontal_velocity = 3; // Horizontal velocity of the ball  
@@ -273,11 +273,13 @@ always @(refresh_rate or ball_c_l or ball_c_t or horizontal_velocity_reg or vert
    scoreChecker2 <= 1'b 0; //2st player did not scored, default value  
    if (refresh_rate === 1'b 1) // posedge of refresh_rate
       begin
-      if (ball_c_l >= bottombar_l & ball_c_l <= bottombar_l +120 & ball_c_t >= bottombar_t - 3 & ball_c_t <= bottombar_t + 5) // if ball hits the bottom bar
+      if (ball_c_l >= bottombar_l && ball_c_l <= bottombar_l + bottombar_w && ball_c_t >= bottombar_t - 15 && ball_c_t <= bottombar_t + 15) // if ball hits the bottom bar
+      // if (ball_c_l >= bottombar_l && ball_c_l <= bottombar_l + bottombar_w && ball_c_t >= 365 ) // if ball hits the bottom bar
          begin
          vertical_velocity_next <= -vertical_velocity; // set the direction of vertical velocity positive
          end
-      else if (ball_c_l >= topbar_l & ball_c_l <= topbar_l + 120 & ball_c_t >= topbar_t + 2 & ball_c_t <= topbar_t + 12 ) // if ball hits the top bar 
+      else if (ball_c_l >= topbar_l && ball_c_l <= topbar_l + 120 && ball_c_t >= topbar_t + 2 && ball_c_t <= topbar_t + 12 ) // if ball hits the top bar 
+      // else if (ball_c_l >= topbar_l && ball_c_l <= topbar_l + 120&& ball_c_t <= topbar_t + 12 ) // if ball hits the top bar 
          begin
          vertical_velocity_next <= vertical_velocity; //set the direction of vertical velocity positive  
          end
@@ -372,49 +374,55 @@ assign displayLowerText9 = x > 420 & x < 460 & y > 340 & y < 380 ? 1'b 1 : 1'b 0
 assign displayLowerText10 = x > 460 & x < 500 & y > 340 & y < 380 ? 1'b 1 : 1'b 0;
 assign displayLowerText11 = x > 500 & x < 540 & y > 340 & y < 380 ? 1'b 1 : 1'b 0;
 
-wire player1_score;
-wire player2_score;
+wire [7:0] player1_score;
+wire [7:0] player2_score;
 assign player1_score = (player1_score_digit2 * 10) + player1_score_digit1;
 assign player2_score = (player2_score_digit2 * 10) + player2_score_digit1;
 
 wire lowerWinning = player1_score < player2_score;
 wire upperWinning = player1_score > player2_score;
 wire tie = player1_score === player2_score;
-wire gameEnd = player1_score > 99 || player2_score > 99;
+wire gameEnd = player1_score >= 99 || player2_score >= 99;
+wire gameNotStart = player1_score === 0 && player2_score === 0;
 
 wire [11:0] player1_score_ascii1;
 wire [11:0] player1_score_ascii2;
 wire [11:0] player2_score_ascii1;
 wire [11:0] player2_score_ascii2;
 
+
+
 assign player1_score_ascii1 = player1_score_digit1 + 8'h30;
 assign player1_score_ascii2 = player1_score_digit2 + 8'h30;
 assign player2_score_ascii1 = player2_score_digit1 + 8'h30;
 assign player2_score_ascii2 = player2_score_digit2 + 8'h30;
+// assign player1_score_ascii1 = (ball_c_t % 10) + 8'h30;
+// assign player2_score_ascii1 = (ball_c_t / 100) + 8'h30;
+// assign player2_score_ascii2 = ((ball_c_t / 10) % 10) + 8'h30;
 // assign lowerText1Ascii = lowerWinning ? 8'h4C : tie ? 8'h41 : 8'h4C; 
-assign upperText1Ascii  = gameEnd ? (upperWinning  ? 8'h45 : 8'h54) : upperWinning ? 8'h4C : tie ? 8'h41 : 8'h4C; //E or T or L or A or L
-assign upperText2Ascii  = gameEnd ? (upperWinning  ? 8'h5A : 8'h72) : upperWinning ? 8'h65 : tie ? 8'h6C : 8'h6F; //Z or r or e or l or o
-assign upperText3Ascii  = gameEnd ? (upperWinning  ? 8'h20 : 8'h79) : upperWinning ? 8'h61 : tie ? 8'h6C : 8'h73; //  or y or a or l or s
-assign upperText4Ascii  = gameEnd ? (upperWinning  ? 8'h57 : 8'h20) : upperWinning ? 8'h64 : tie ? 8'h55 : 8'h69; //W or   or d or U or i
-assign upperText5Ascii  = gameEnd ? (upperWinning  ? 8'h69 : 8'h48) : upperWinning ? 8'h69 : tie ? 8'h68 : 8'h6E; //i or H or i or h or n
-assign upperText6Ascii  = gameEnd ? (upperWinning  ? 8'h6E : 8'h61) : upperWinning ? 8'h6E : tie ? 8'h61 : 8'h67; //n or a or n or a or g
-assign upperText7Ascii  = gameEnd ? (upperWinning  ? 8'h20 : 8'h72) : upperWinning ? 8'h67 : tie ? 8'h76 : 8'h20; //  or r or g or v or  
-assign upperText8Ascii  = gameEnd ? (upperWinning  ? 8'h20 : 8'h64) : upperWinning ? 8'h20 : tie ? 8'h65 : 8'h20; //  or d or   or e or  
-assign upperText9Ascii  = gameEnd ? (upperWinning  ? 8'h20 : 8'h65) : upperWinning ? 8'h20 : tie ? 8'h3F : 8'h20; //  or e or   or ? or  
-assign upperText10Ascii = gameEnd ? (upperWinning  ? 8'h20 : 8'h72) : player1_score_ascii2       ; //  or r or 0 or 0 or 0
-assign upperText11Ascii = gameEnd ? (upperWinning  ? 8'h20 : 8'h20) : player1_score_ascii1       ; //  or   or 0 or 0 or 0
+assign upperText1Ascii  = gameNotStart ? 8'h52 : gameEnd ? (upperWinning  ? 8'h45 : 8'h54) : upperWinning ? 8'h4C : tie ? 8'h41 : 8'h4C; //E or T or L or A or L
+assign upperText2Ascii  = gameNotStart ? 8'h20 : gameEnd ? (upperWinning  ? 8'h5A : 8'h72) : upperWinning ? 8'h65 : tie ? 8'h6C : 8'h6F; //Z or r or e or l or o
+assign upperText3Ascii  = gameNotStart ? 8'h55 : gameEnd ? (upperWinning  ? 8'h20 : 8'h79) : upperWinning ? 8'h61 : tie ? 8'h6C : 8'h73; //  or y or a or l or s
+assign upperText4Ascii  = gameNotStart ? 8'h20 : gameEnd ? (upperWinning  ? 8'h57 : 8'h20) : upperWinning ? 8'h64 : tie ? 8'h55 : 8'h69; //W or   or d or U or i
+assign upperText5Ascii  = gameNotStart ? 8'h55 : gameEnd ? (upperWinning  ? 8'h69 : 8'h48) : upperWinning ? 8'h69 : tie ? 8'h68 : 8'h6E; //i or H or i or h or n
+assign upperText6Ascii  = gameNotStart ? 8'h65 : gameEnd ? (upperWinning  ? 8'h6E : 8'h61) : upperWinning ? 8'h6E : tie ? 8'h61 : 8'h67; //n or a or n or a or g
+assign upperText7Ascii  = gameNotStart ? 8'h61 : gameEnd ? (upperWinning  ? 8'h20 : 8'h72) : upperWinning ? 8'h67 : tie ? 8'h76 : 8'h20; //  or r or g or v or  
+assign upperText8Ascii  = gameNotStart ? 8'h64 : gameEnd ? (upperWinning  ? 8'h20 : 8'h64) : upperWinning ? 8'h20 : tie ? 8'h65 : 8'h20; //  or d or   or e or  
+assign upperText9Ascii  = gameNotStart ? 8'h79 : gameEnd ? (upperWinning  ? 8'h20 : 8'h65) : upperWinning ? 8'h20 : tie ? 8'h3F : 8'h20; //  or e or   or ? or  
+assign upperText10Ascii = gameNotStart ? 8'h20 : gameEnd ? (upperWinning  ? 8'h20 : 8'h72) : player1_score_ascii2       ;                //  or r or 0 or 0 or 0
+assign upperText11Ascii = gameNotStart ? 8'h20 : gameEnd ? (upperWinning  ? 8'h20 : 8'h20) : player1_score_ascii1       ;                //  or   or 0 or 0 or 0
 
-assign lowerText1Ascii  = gameEnd ? (lowerWinning  ? 8'h45 : 8'h54) : lowerWinning ? 8'h4C : tie ? 8'h41 : 8'h4C; //E or T or L or A or L
-assign lowerText2Ascii  = gameEnd ? (lowerWinning  ? 8'h5A : 8'h72) : lowerWinning ? 8'h65 : tie ? 8'h6C : 8'h6F; //Z or r or e or l or o
-assign lowerText3Ascii  = gameEnd ? (lowerWinning  ? 8'h20 : 8'h79) : lowerWinning ? 8'h61 : tie ? 8'h6C : 8'h73; //  or y or a or l or s
-assign lowerText4Ascii  = gameEnd ? (lowerWinning  ? 8'h57 : 8'h20) : lowerWinning ? 8'h64 : tie ? 8'h55 : 8'h69; //W or   or d or U or i
-assign lowerText5Ascii  = gameEnd ? (lowerWinning  ? 8'h69 : 8'h48) : lowerWinning ? 8'h69 : tie ? 8'h68 : 8'h6E; //i or H or i or h or n
-assign lowerText6Ascii  = gameEnd ? (lowerWinning  ? 8'h6E : 8'h61) : lowerWinning ? 8'h6E : tie ? 8'h61 : 8'h67; //n or a or n or a or g
-assign lowerText7Ascii  = gameEnd ? (lowerWinning  ? 8'h20 : 8'h72) : lowerWinning ? 8'h67 : tie ? 8'h76 : 8'h20; //  or r or g or v or  
-assign lowerText8Ascii  = gameEnd ? (lowerWinning  ? 8'h20 : 8'h64) : lowerWinning ? 8'h20 : tie ? 8'h65 : 8'h20; //  or d or   or e or
-assign lowerText9Ascii  = gameEnd ? (lowerWinning  ? 8'h20 : 8'h65) : lowerWinning ? 8'h20 : tie ? 8'h3F : 8'h20; //  or e or   or ? or
-assign lowerText10Ascii = gameEnd ? (lowerWinning  ? 8'h20 : 8'h72) : player2_score_ascii1       ; //  or r or 0 or 0 or 0
-assign lowerText11Ascii = gameEnd ? (lowerWinning  ? 8'h20 : 8'h20) : player2_score_ascii2       ; //  or   or 0 or 0 or 0
+assign lowerText1Ascii  = gameNotStart ? 8'h52 : gameEnd ? (lowerWinning  ? 8'h45 : 8'h54) : lowerWinning ? 8'h4C : tie ? 8'h41 : 8'h4C; //E or T or L or A or L
+assign lowerText2Ascii  = gameNotStart ? 8'h20 : gameEnd ? (lowerWinning  ? 8'h5A : 8'h72) : lowerWinning ? 8'h65 : tie ? 8'h6C : 8'h6F; //Z or r or e or l or o
+assign lowerText3Ascii  = gameNotStart ? 8'h55 : gameEnd ? (lowerWinning  ? 8'h20 : 8'h79) : lowerWinning ? 8'h61 : tie ? 8'h6C : 8'h73; //  or y or a or l or s
+assign lowerText4Ascii  = gameNotStart ? 8'h20 : gameEnd ? (lowerWinning  ? 8'h57 : 8'h20) : lowerWinning ? 8'h64 : tie ? 8'h55 : 8'h69; //W or   or d or U or i
+assign lowerText5Ascii  = gameNotStart ? 8'h55 : gameEnd ? (lowerWinning  ? 8'h69 : 8'h48) : lowerWinning ? 8'h69 : tie ? 8'h68 : 8'h6E; //i or H or i or h or n
+assign lowerText6Ascii  = gameNotStart ? 8'h65 : gameEnd ? (lowerWinning  ? 8'h6E : 8'h61) : lowerWinning ? 8'h6E : tie ? 8'h61 : 8'h67; //n or a or n or a or g
+assign lowerText7Ascii  = gameNotStart ? 8'h61 : gameEnd ? (lowerWinning  ? 8'h20 : 8'h72) : lowerWinning ? 8'h67 : tie ? 8'h76 : 8'h20; //  or r or g or v or  
+assign lowerText8Ascii  = gameNotStart ? 8'h64 : gameEnd ? (lowerWinning  ? 8'h20 : 8'h64) : lowerWinning ? 8'h20 : tie ? 8'h65 : 8'h20; //  or d or   or e or
+assign lowerText9Ascii  = gameNotStart ? 8'h79 : gameEnd ? (lowerWinning  ? 8'h20 : 8'h65) : lowerWinning ? 8'h20 : tie ? 8'h3F : 8'h20; //  or e or   or ? or
+assign lowerText10Ascii = gameNotStart ? 8'h20 : gameEnd ? (lowerWinning  ? 8'h20 : 8'h72) : player2_score_ascii1       ;                //  or r or 0 or 0 or 0
+assign lowerText11Ascii = gameNotStart ? 8'h20 : gameEnd ? (lowerWinning  ? 8'h20 : 8'h20) : player2_score_ascii2       ;                //  or   or 0 or 0 or 0
 
 wire [2:0] upperText1;
 wire [2:0] upperText2;
@@ -480,7 +488,7 @@ assign output_mux = {video_on, display_topbar, display_bottombar, display_ball};
 
 //assign rgb_next wrt output_mux.
 assign rgb_next =
-   (video_on && showText) ? 
+   output_mux === 4'b 1000 ?(showText ? 
    (displayUpperText1 ? upperText1 :
    displayUpperText2 ? upperText2 :
    displayUpperText3 ? upperText3 :
@@ -502,14 +510,14 @@ assign rgb_next =
    displayLowerText8 ? lowerText8 :
    displayLowerText9 ? lowerText9 :
    displayLowerText10 ? lowerText10 :
-   lowerText11) :
-   output_mux === 4'b 1000 ? 3'b 000 : 
+   lowerText11) : 3'b 000 ): 
 	output_mux === 4'b 1100 ? rgb_bottombar : 
 	output_mux === 4'b 1101 ? rgb_bottombar : 
 	output_mux === 4'b 1010 ? rgb_topbar : 
 	output_mux === 4'b 1011 ? rgb_topbar : 
 	output_mux === 4'b 1001 ? rgb_ball : 
    output_mux === 4'b 1111 ? rgb_ball :
+   
 	3'b 000; 
 	
 

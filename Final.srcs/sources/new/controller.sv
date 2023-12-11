@@ -25,7 +25,8 @@ module controller(
     output reg bottom_button_r,
     output reg top_button_l,
     output reg top_button_r,
-    output reg start_ball
+    output reg start_ball,
+    output reg reset
     );
     
     reg enable, last_rec;
@@ -51,12 +52,15 @@ module controller(
             top_button_r = 1'b 0;
             bottom_button_l = 1'b 0;
             bottom_button_r = 1'b 0;
+            start_ball = 1'b 0;
+            reset = 1'b 0;
             case(payload)
                 8'h61: top_button_l = 1'b 1;
                 8'h64: top_button_r = 1'b 1;
                 8'h6A: bottom_button_l = 1'b 1;
                 8'h6C: bottom_button_r = 1'b 1;
                 8'h20: start_ball = 1'b 1;
+                8'h79: reset = 1'b 1;
             endcase
             if (payload <= 8'h7A && payload >= 8'h41) enable = 1;
         end

@@ -3,7 +3,7 @@
 module main_control(
     input logic clk,
     input logic start,   
-    input logic reset,
+    // input logic reset,
 //    input logic bottom_button_l,
 //    input logic bottom_button_r,
 //    input logic top_button_l,
@@ -46,6 +46,7 @@ wire top_button_r;
 wire bottom_button_l;
 wire bottom_button_r;
 wire start_ball;
+wire reset;
 
 //signal clk_50 :std_logic;
 reg clk_50;
@@ -60,11 +61,14 @@ anim_gen(clk_50, reset, x_control,start_ball, bottom_button_l, bottom_button_r,t
 //vga synchronization module to update changing pixels and refresh the display
 sync_mod(clk_50, reset, start, y_control, x_control, horizontal_sync, vertical_sync, video_on);
 
-controller(clk,RsRx,RsTx, bottom_button_l, bottom_button_r,top_button_l,top_button_r, start_ball);
+controller(clk,RsRx,RsTx, bottom_button_l, bottom_button_r,top_button_l,top_button_r, start_ball, reset);
 //if score checker1 is enabled that means player 1(topbar) scored, so update  his score
 always_ff @(posedge clk_50, posedge reset)
 begin
-    if ((player1_score_digit2 == 9 && player1_score_digit1 == 9 )|| reset == 1)
+    if ((player1_score_digit1 == 9 && player1_score_digit2 == 9) || ( player2_score_digit1 == 9 && 9 == player2_score_digit2))
+    begin
+    end
+    else if ( reset == 1)
     begin
         player1_score_digit2 <= 0;
         player1_score_digit1 <= 0;
@@ -83,7 +87,11 @@ end
 //if score checker2 is enabled that means player2 (bottom bar) scored, so update his score
 always_ff @(posedge clk_50, posedge reset)
 begin
-    if ((player2_score_digit2 == 9 && player2_score_digit1 == 9 )|| reset == 1)
+    //  (player2_score_digit2 == 9 && player2_score_digit1 == 9 && score_checker2 == 1)||
+    if ((player1_score_digit1 == 9 && player1_score_digit2 == 9) || (player2_score_digit1 == 9 && 9 == player2_score_digit2))
+    begin
+    end
+    else if ( reset == 1)
     begin
         player2_score_digit2 <= 0;
         player2_score_digit1 <= 0;
@@ -93,7 +101,7 @@ begin
         player2_score_digit1 <= 0;
         player2_score_digit2++;
     end
-    else if (score_checker1 == 1)
+    else if (score_checker2 == 1)
     begin
         player2_score_digit1++;
     end
@@ -101,6 +109,6 @@ end
 
 
 //Module to display the scores on the 7seg display of basys3
-SevenSegment(clk_50,player1_score_digit2,player1_score_digit1,player2_score_digit2,player2_score_digit1,a, b, c, d, e, f, g, dp,an);
+SevenSegment(clk_50,player1_score_digit1,player1_score_digit2,player2_score_digit1,player2_score_digit2,a, b, c, d, e, f, g, dp,an);
 wire noobvivado3;            
 endmodule

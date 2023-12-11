@@ -5,6 +5,8 @@ set_property src_info {type:XDC file:1 line:13 export:INPUT save:INPUT read:READ
 set_property PACKAGE_PIN V17 [get_ports {start}]
 set_property src_info {type:XDC file:1 line:15 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN V16 [get_ports {reset}]
+set_property src_info {type:XDC file:1 line:16 export:INPUT save:INPUT read:READ} [current_design]
+set_property IOSTANDARD LVCMOS33 [get_ports {reset}]
 set_property src_info {type:XDC file:1 line:20 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN W19 [get_ports bottom_button_l]
 set_property src_info {type:XDC file:1 line:21 export:INPUT save:INPUT read:READ} [current_design]

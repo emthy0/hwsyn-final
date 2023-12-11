@@ -1,0 +1,19 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../Final.ip_user_files/ipstatic" \
+"../../../../Final.ip_user_files/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" \
+"../../../../Final.ip_user_files/ip/clk_wiz_0/clk_wiz_0.v" \
+
+sv xil_defaultlib  --include "../../../../Final.ip_user_files/ipstatic" \
+"../../../../Final.srcs/sources/new/SevenSegment.sv" \
+"../../../../Final.srcs/sources/new/anim_gen.sv" \
+"../../../../Final.srcs/sources/new/char_rom.sv" \
+"../../../../Final.srcs/sources/new/controller.sv" \
+"../../../../Final.srcs/sources/new/txrx.sv" \
+"../../../../Final.srcs/sources/new/vga.sv" \
+"../../../../Final.srcs/sources/new/main_control.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
