@@ -421,8 +421,8 @@ assign lowerText6Ascii  = gameNotStart ? 8'h65 : gameEnd ? (lowerWinning  ? 8'h6
 assign lowerText7Ascii  = gameNotStart ? 8'h61 : gameEnd ? (lowerWinning  ? 8'h20 : 8'h72) : lowerWinning ? 8'h67 : tie ? 8'h76 : 8'h20; //  or r or g or v or  
 assign lowerText8Ascii  = gameNotStart ? 8'h64 : gameEnd ? (lowerWinning  ? 8'h20 : 8'h64) : lowerWinning ? 8'h20 : tie ? 8'h65 : 8'h20; //  or d or   or e or
 assign lowerText9Ascii  = gameNotStart ? 8'h79 : gameEnd ? (lowerWinning  ? 8'h20 : 8'h65) : lowerWinning ? 8'h20 : tie ? 8'h3F : 8'h20; //  or e or   or ? or
-assign lowerText10Ascii = gameNotStart ? 8'h20 : gameEnd ? (lowerWinning  ? 8'h20 : 8'h72) : player2_score_ascii1       ;                //  or r or 0 or 0 or 0
-assign lowerText11Ascii = gameNotStart ? 8'h20 : gameEnd ? (lowerWinning  ? 8'h20 : 8'h20) : player2_score_ascii2       ;                //  or   or 0 or 0 or 0
+assign lowerText10Ascii = gameNotStart ? 8'h20 : gameEnd ? (lowerWinning  ? 8'h20 : 8'h72) : player2_score_ascii2       ;                //  or r or 0 or 0 or 0
+assign lowerText11Ascii = gameNotStart ? 8'h20 : gameEnd ? (lowerWinning  ? 8'h20 : 8'h20) : player2_score_ascii1       ;                //  or   or 0 or 0 or 0
 
 wire [2:0] upperText1;
 wire [2:0] upperText2;

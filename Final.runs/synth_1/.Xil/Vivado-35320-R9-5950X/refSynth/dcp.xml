@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<Checkpoint Version="20" Minor="0">
+	<BUILD_NUMBER Name="3865809"/>
+	<FULL_BUILD Name="SW Build 3865809 on Sun May  7 15:05:29 MDT 2023"/>
+	<PRODUCT Name="Vivado v2023.1 (64-bit)"/>
+	<Part Name="xc7a35tcpg236-1"/>
+	<BoardPart Name="digilentinc.com:basys3:part0:1.2"/>
+	<Top Name="main_control"/>
+	<DisableAutoIOBuffers Name="0"/>
+	<OutOfContext Name="0"/>
+	<RunGenerated Name="1"/>
+	<HDPlatform Name="0"/>
+	<File Type="VERILOG_STUB" Name="main_control_stub.v" ModTime="1702292073"/>
+	<File Type="VHDL_STUB" Name="main_control_stub.vhdl" ModTime="1702292073"/>
+	<File Type="SHAPE" Name="main_control.shape" ModTime="1702292073"/>
+	<File Type="XN" Name="main_control.xn" ModTime="1702292073"/>
+	<File Type="EDIF" Name="main_control.edf" ModTime="1702292073"/>
+	<File Type="INCR" Name="main_control.incr" ModTime="1702292073"/>
+	<File Type="RDA" Name="main_control.rda" ModTime="1702292073"/>
+	<File Type="JSON_RDA" Name="main_control_rda.json" ModTime="1702292073"/>
+	<File Type="WDF" Name="main_control.wdf" ModTime="1702292073"/>
+	<File Type="SYNTH" Name="main_control.synth" ModTime="1702292073"/>
+</Checkpoint>
+

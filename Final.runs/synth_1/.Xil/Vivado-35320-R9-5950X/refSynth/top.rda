@@ -1,0 +1,167 @@
+Data_For_RDAFlowver5.0
+	top level–h
+main_control4
+LinkDesign_Blackboxes
+nolabel_line56	clk_wiz_0ë 
+synthFileNamesJ
+10DH:/Xilinz/Vivado/2023.1/data/vhdl/src/unimacro/BRAM_SINGLE_MACRO.vhdG
+11AH:/Xilinz/Vivado/2023.1/data/vhdl/src/unimacro/BRAM_TDP_MACRO.vhdK
+12EH:/Xilinz/Vivado/2023.1/data/vhdl/src/unimacro/COUNTER_LOAD_MACRO.vhdI
+13CH:/Xilinz/Vivado/2023.1/data/vhdl/src/unimacro/COUNTER_TC_MACRO.vhdI
+14CH:/Xilinz/Vivado/2023.1/data/vhdl/src/unimacro/EQ_COMPARE_MACRO.vhdF
+20@H:/Xilinz/Vivado/2023.1/data/verilog/src/unimacro/ADDSUB_MACRO.vM
+15GH:/Xilinz/Vivado/2023.1/data/vhdl/src/unimacro/FIFO_DUALCLOCK_MACRO.vhdH
+21BH:/Xilinz/Vivado/2023.1/data/verilog/src/unimacro/BRAM_SDP_MACRO.vH
+16BH:/Xilinz/Vivado/2023.1/data/vhdl/src/unimacro/FIFO_SYNC_MACRO.vhdK
+22EH:/Xilinz/Vivado/2023.1/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.vC
+17=H:/Xilinz/Vivado/2023.1/data/vhdl/src/unimacro/MACC_MACRO.vhdC
+18=H:/Xilinz/Vivado/2023.1/data/vhdl/src/unimacro/MULT_MACRO.vhdH
+23BH:/Xilinz/Vivado/2023.1/data/verilog/src/unimacro/BRAM_TDP_MACRO.vG
+19AH:/Xilinz/Vivado/2023.1/data/verilog/src/unimacro/ADDMACC_MACRO.vL
+24FH:/Xilinz/Vivado/2023.1/data/verilog/src/unimacro/COUNTER_LOAD_MACRO.vJ
+25DH:/Xilinz/Vivado/2023.1/data/verilog/src/unimacro/COUNTER_TC_MACRO.vD
+30>H:/Xilinz/Vivado/2023.1/data/verilog/src/unimacro/MULT_MACRO.v
+NumFileNames51J
+26DH:/Xilinz/Vivado/2023.1/data/verilog/src/unimacro/EQ_COMPARE_MACRO.vJ
+31DH:/Xilinz/Vivado/2023.1/data/vhdl/src/unisims/retarget/MULT18X18.vhd=
+18H:/Xilinz/Vivado/2023.1/scripts/rt/data/unisim_VCOMP.vhdN
+27HH:/Xilinz/Vivado/2023.1/data/verilog/src/unimacro/FIFO_DUALCLOCK_MACRO.vK
+32EH:/Xilinz/Vivado/2023.1/data/vhdl/src/unisims/retarget/MULT18X18S.vhd<
+27H:/Xilinz/Vivado/2023.1/scripts/rt/data/unisim_VPKG.vhdI
+28CH:/Xilinz/Vivado/2023.1/data/verilog/src/unimacro/FIFO_SYNC_MACRO.vd
+33^C:/Users/ironp/Project/basys3-riscv/RISCV_CPU/src/Final/Final.srcs/sources/new/SevenSegment.sv:
+35H:/Xilinz/Vivado/2023.1/scripts/rt/data/unisim_comp.vD
+29>H:/Xilinz/Vivado/2023.1/data/verilog/src/unimacro/MACC_MACRO.v`
+34ZC:/Users/ironp/Project/basys3-riscv/RISCV_CPU/src/Final/Final.srcs/sources/new/anim_gen.sv=
+48H:/Xilinz/Vivado/2023.1/scripts/rt/data/internal_cells.v`
+35ZC:/Users/ironp/Project/basys3-riscv/RISCV_CPU/src/Final/Final.srcs/sources/new/char_rom.sv‡
+40€C:/Users/ironp/Project/basys3-riscv/RISCV_CPU/src/Final/Final.runs/synth_1/.Xil/Vivado-132760-R9-5950X/realtime/clk_wiz_0_stub.v3
+5.H:/Xilinz/Vivado/2023.1/scripts/rt/data/BUFT.vb
+36\C:/Users/ironp/Project/basys3-riscv/RISCV_CPU/src/Final/Final.srcs/sources/new/controller.svf
+41`C:/Users/ironp/Project/basys3-riscv/RISCV_CPU/src/Final/Final.runs/synth_1/1993/src/std_1164.vhdF
+6AH:/Xilinz/Vivado/2023.1/data/vhdl/src/unimacro/unimacro_VCOMP.vhd\
+37VC:/Users/ironp/Project/basys3-riscv/RISCV_CPU/src/Final/Final.srcs/sources/new/txrx.svf
+42`C:/Users/ironp/Project/basys3-riscv/RISCV_CPU/src/Final/Final.runs/synth_1/1993/src/standard.vhdE
+7@H:/Xilinz/Vivado/2023.1/data/vhdl/src/unimacro/ADDMACC_MACRO.vhd[
+38UC:/Users/ironp/Project/basys3-riscv/RISCV_CPU/src/Final/Final.srcs/sources/new/vga.svi
+43cC:/Users/ironp/Project/basys3-riscv/RISCV_CPU/src/Final/Final.runs/synth_1/1993/src/numeric_std.vhdD
+8?H:/Xilinz/Vivado/2023.1/data/vhdl/src/unimacro/ADDSUB_MACRO.vhdd
+39^C:/Users/ironp/Project/basys3-riscv/RISCV_CPU/src/Final/Final.srcs/sources/new/main_control.svd
+44^C:/Users/ironp/Project/basys3-riscv/RISCV_CPU/src/Final/Final.runs/synth_1/1993/src/textio.vhdf
+50`C:/Users/ironp/Project/basys3-riscv/RISCV_CPU/src/Final/Final.runs/synth_1/1993/src/syn_unsi.vhdF
+9AH:/Xilinz/Vivado/2023.1/data/vhdl/src/unimacro/BRAM_SDP_MACRO.vhdf
+45`C:/Users/ironp/Project/basys3-riscv/RISCV_CPU/src/Final/Final.runs/synth_1/1993/src/timing_p.vhdf
+46`C:/Users/ironp/Project/basys3-riscv/RISCV_CPU/src/Final/Final.runs/synth_1/1993/src/timing_b.vhdf
+47`C:/Users/ironp/Project/basys3-riscv/RISCV_CPU/src/Final/Final.runs/synth_1/1993/src/prmtvs_p.vhdf
+48`C:/Users/ironp/Project/basys3-riscv/RISCV_CPU/src/Final/Final.runs/synth_1/1993/src/prmtvs_b.vhdf
+49`C:/Users/ironp/Project/basys3-riscv/RISCV_CPU/src/Final/Final.runs/synth_1/1993/src/syn_arit.vhdƒ
+
+synthStatsC
+caseNotFullNoDefault
+L68
+Mnullname
+F37
+
+OcountC
+caseNotFullNoDefault
+L30
+Mnullname
+F37
+
+OcountE
+caseNotFullNoDefault
+L57
+Mnullname
+F36
+OpayloadQ
+dspWideMultUnderpipelined
+L338
+Mnullname
+F34
+Odisplay_ball1Q
+dspWideMultUnderpipelined
+L338
+Mnullname
+F34
+Odisplay_ball1¥?
+ElaboratedNamesForRQS‹?
+DSP_RAM*
+1875969 {nolabel_line59/rowNum2_i__6} O
+1556481D {nolabel_line59/player2_score0_i} {nolabel_line59/player2_score_i} K
+1265665@ {nolabel_line59/scoreChecker2_i} {nolabel_line59/scorerNext_i} B
+18472977 {nolabel_line59/colNum2_i} {nolabel_line59/rowNum2_i} /
+278533% {nolabel_line64/receiver/data_i__0} 1
+1044481& {nolabel_line59/topbar_l_next0_i__0} N
+1212417C {nolabel_line59/scoreChecker1_i} {nolabel_line59/scorerNext_i__0} 3
+958465) {nolabel_line59/bottombar_l_next0_i__0} 2
+1335297' {nolabel_line59/display_bottombar3_i} 4
+1630209) {nolabel_line59/player2_score_ascii2_i} .
+765955$ {nolabel_line62/x_counter_next0_i} *
+1880065 {nolabel_line59/rowNum2_i__7} *
+1851393 {nolabel_line59/rowNum2_i__0} *
+1884161 {nolabel_line59/rowNum2_i__8} %
+57351 {nolabel_line113/count0_i} á
+57346× {nolabel_line59/char_rom1/pixel2_i} {nolabel_line59/char_rom1/pixel3_i} {nolabel_line59/char_rom1/pixel3_i__0} {nolabel_line59/char_rom1/pixel4_i} {nolabel_line59/char_rom10/pixel2_i} {nolabel_line59/char_rom10/pixel3_i} {nolabel_line59/char_rom10/pixel3_i__0} {nolabel_line59/char_rom10/pixel4_i} {nolabel_line59/char_rom11/pixel2_i} {nolabel_line59/char_rom11/pixel3_i} {nolabel_line59/char_rom11/pixel3_i__0} {nolabel_line59/char_rom11/pixel4_i} {nolabel_line59/char_rom12/pixel2_i} {nolabel_line59/char_rom12/pixel3_i} {nolabel_line59/char_rom12/pixel3_i__0} {nolabel_line59/char_rom12/pixel4_i} {nolabel_line59/char_rom13/pixel2_i} {nolabel_line59/char_rom13/pixel3_i} {nolabel_line59/char_rom13/pixel3_i__0} {nolabel_line59/char_rom13/pixel4_i} {nolabel_line59/char_rom14/pixel2_i} {nolabel_line59/char_rom14/pixel3_i} {nolabel_line59/char_rom14/pixel3_i__0} {nolabel_line59/char_rom14/pixel4_i} {nolabel_line59/char_rom15/pixel2_i} {nolabel_line59/char_rom15/pixel3_i} {nolabel_line59/char_rom15/pixel3_i__0} {nolabel_line59/char_rom15/pixel4_i} {nolabel_line59/char_rom16/pixel2_i} {nolabel_line59/char_rom16/pixel3_i} {nolabel_line59/char_rom16/pixel3_i__0} {nolabel_line59/char_rom16/pixel4_i} {nolabel_line59/char_rom17/pixel2_i} {nolabel_line59/char_rom17/pixel3_i} {nolabel_line59/char_rom17/pixel3_i__0} {nolabel_line59/char_rom17/pixel4_i} {nolabel_line59/char_rom18/pixel2_i} {nolabel_line59/char_rom18/pixel3_i} {nolabel_line59/char_rom18/pixel3_i__0} {nolabel_line59/char_rom18/pixel4_i} {nolabel_line59/char_rom19/pixel2_i} {nolabel_line59/char_rom19/pixel3_i} {nolabel_line59/char_rom19/pixel3_i__0} {nolabel_line59/char_rom19/pixel4_i} {nolabel_line59/char_rom2/pixel2_i} {nolabel_line59/char_rom2/pixel3_i} {nolabel_line59/char_rom2/pixel3_i__0} {nolabel_line59/char_rom2/pixel4_i} {nolabel_line59/char_rom20/pixel2_i} {nolabel_line59/char_rom20/pixel3_i} {nolabel_line59/char_rom20/pixel3_i__0} {nolabel_line59/char_rom20/pixel4_i} {nolabel_line59/char_rom21/pixel2_i} {nolabel_line59/char_rom21/pixel3_i} {nolabel_line59/char_rom21/pixel3_i__0} {nolabel_line59/char_rom21/pixel4_i} {nolabel_line59/char_rom22/pixel2_i} {nolabel_line59/char_rom22/pixel3_i} {nolabel_line59/char_rom22/pixel3_i__0} {nolabel_line59/char_rom22/pixel4_i} {nolabel_line59/char_rom3/pixel2_i} {nolabel_line59/char_rom3/pixel3_i} {nolabel_line59/char_rom3/pixel3_i__0} {nolabel_line59/char_rom3/pixel4_i} {nolabel_line59/char_rom4/pixel2_i} {nolabel_line59/char_rom4/pixel3_i} {nolabel_line59/char_rom4/pixel3_i__0} {nolabel_line59/char_rom4/pixel4_i} {nolabel_line59/char_rom5/pixel2_i} {nolabel_line59/char_rom5/pixel3_i} {nolabel_line59/char_rom5/pixel3_i__0} {nolabel_line59/char_rom5/pixel4_i} {nolabel_line59/char_rom6/pixel2_i} {nolabel_line59/char_rom6/pixel3_i} {nolabel_line59/char_rom6/pixel3_i__0} {nolabel_line59/char_rom6/pixel4_i} {nolabel_line59/char_rom7/pixel2_i} {nolabel_line59/char_rom7/pixel3_i} {nolabel_line59/char_rom7/pixel3_i__0} {nolabel_line59/char_rom7/pixel4_i} {nolabel_line59/char_rom8/pixel2_i} {nolabel_line59/char_rom8/pixel3_i} {nolabel_line59/char_rom8/pixel3_i__0} {nolabel_line59/char_rom8/pixel4_i} {nolabel_line59/char_rom9/pixel2_i} {nolabel_line59/char_rom9/pixel3_i} {nolabel_line59/char_rom9/pixel3_i__0} {nolabel_line59/char_rom9/pixel4_i} .
+835587$ {nolabel_line62/y_counter_next0_i} *
+1855489 {nolabel_line59/rowNum2_i__1} ,
+2125825! {nolabel_line59/rgb_next5_i__0} (
+323584 {player1_score_digit20_i__0} 1
+106501' {nolabel_line64/transmitter/count0_i} *
+1888257 {nolabel_line59/rowNum2_i__9} *
+1859585 {nolabel_line59/rowNum2_i__2} ,
+741377" {nolabel_line59/refresh_next0_i} (
+421888 {player2_score_digit20_i__0} ò
+61442è {nolabel_line59/char_rom1/pixel1_i__0} {nolabel_line59/char_rom10/pixel1_i__0} {nolabel_line59/char_rom11/pixel1_i__0} {nolabel_line59/char_rom12/pixel1_i__0} {nolabel_line59/char_rom13/pixel1_i__0} {nolabel_line59/char_rom14/pixel1_i__0} {nolabel_line59/char_rom15/pixel1_i__0} {nolabel_line59/char_rom16/pixel1_i__0} {nolabel_line59/char_rom17/pixel1_i__0} {nolabel_line59/char_rom18/pixel1_i__0} {nolabel_line59/char_rom19/pixel1_i__0} {nolabel_line59/char_rom2/pixel1_i__0} {nolabel_line59/char_rom20/pixel1_i__0} {nolabel_line59/char_rom21/pixel1_i__0} {nolabel_line59/char_rom22/pixel1_i__0} {nolabel_line59/char_rom3/pixel1_i__0} {nolabel_line59/char_rom4/pixel1_i__0} {nolabel_line59/char_rom5/pixel1_i__0} {nolabel_line59/char_rom6/pixel1_i__0} {nolabel_line59/char_rom7/pixel1_i__0} {nolabel_line59/char_rom8/pixel1_i__0} {nolabel_line59/char_rom9/pixel1_i__0} :
+1150977/ {nolabel_line59/vertical_velocity_next4_i__1} +
+745473! {nolabel_line59/refresh_rate_i} .
+1028097# {nolabel_line59/topbar_l_next0_i} °
+36866¦ {nolabel_line59/char_rom1/pixel1_i} {nolabel_line59/char_rom10/pixel1_i} {nolabel_line59/char_rom11/pixel1_i} {nolabel_line59/char_rom12/pixel1_i} {nolabel_line59/char_rom13/pixel1_i} {nolabel_line59/char_rom14/pixel1_i} {nolabel_line59/char_rom15/pixel1_i} {nolabel_line59/char_rom16/pixel1_i} {nolabel_line59/char_rom17/pixel1_i} {nolabel_line59/char_rom18/pixel1_i} {nolabel_line59/char_rom19/pixel1_i} {nolabel_line59/char_rom2/pixel1_i} {nolabel_line59/char_rom20/pixel1_i} {nolabel_line59/char_rom21/pixel1_i} {nolabel_line59/char_rom22/pixel1_i} {nolabel_line59/char_rom3/pixel1_i} {nolabel_line59/char_rom4/pixel1_i} {nolabel_line59/char_rom5/pixel1_i} {nolabel_line59/char_rom6/pixel1_i} {nolabel_line59/char_rom7/pixel1_i} {nolabel_line59/char_rom8/pixel1_i} {nolabel_line59/char_rom9/pixel1_i} *
+1863681 {nolabel_line59/rowNum2_i__3} 3
+36868* {nolabel_line64/baudrate_gen/counter0_i} 4
+1617921) {nolabel_line59/player1_score_ascii1_i} É
+233476¾ {nolabel_line64/bottom_button_l_i} {nolabel_line64/bottom_button_r_i} {nolabel_line64/reset_i} {nolabel_line64/start_ball_i} {nolabel_line64/top_button_l_i} {nolabel_line64/top_button_r_i} 0
+942081& {nolabel_line59/bottombar_l_next0_i} *
+1896449 {nolabel_line59/colNum2_i__0} .
+622595$ {nolabel_line62/counter_h_next0_i} .
+266245$ {nolabel_line64/receiver/count0_i} *
+1867777 {nolabel_line59/rowNum2_i__4} ,
+557059" {nolabel_line62/vertical_end0_i} Å
+0¿ {nolabel_line64/receiver/done0_i} {nolabel_line64/receiver/receiving0_i} {nolabel_line64/transmitter/bit_out0_i} {nolabel_line64/transmitter/sending0_i} {nolabel_line64/transmitter/sent0_i} ¸
+1384449¬ {nolabel_line59/display_ball0_i} {nolabel_line59/display_ball1_i} {nolabel_line59/display_ball1_i__0} {nolabel_line59/display_ball2_i} {nolabel_line59/display_ball2_i__0} .
+688131$ {nolabel_line62/counter_v_next0_i} .
+1204225# {nolabel_line59/ball_c_l_next0_i} 7
+1130497, {nolabel_line59/vertical_velocity_next5_i} %
+339968 {player1_score_digit10_i} 4
+1622017) {nolabel_line59/player1_score_ascii2_i} /
+1359873$ {nolabel_line59/display_topbar3_i} .
+1208321# {nolabel_line59/ball_c_t_next0_i} *
+1871873 {nolabel_line59/rowNum2_i__5} .
+532483$ {nolabel_line62/horizontal_end0_i} )
+241671 {nolabel_line113/sseg_LEDs_i} %
+438272 {player2_score_digit10_i} 4
+1626113) {nolabel_line59/player2_score_ascii1_i} O
+1552385D {nolabel_line59/player1_score0_i} {nolabel_line59/player1_score_i} +
+blackBoxInfo
+nolabel_line56	clk_wiz_0†
+synth_design
+isIncremental0
+Runtime2
+Threads used2[
+argsS-verilog_define default::[not_specified] -top  main_control -part  xc7a35tcpg236-1 
+resynthPerc0.00
+Cputime2
+blackBoxPercinf
+	directive œ
+synth_design_metrics$
+mismatchedAddSubOperatorWidths-1
+lowMaxFanout-1
+NumUnregisteredPorts0
+caseNotFullNoDefault3
+	smallSrls-1
+srlsWithResetLogic-1
+shallowRAMWithAttribute-1
+hierMFO0
+bigRAMs-1
+NetsWithMixedFanouts-1
+DSPsWithKeep0
+RQS_Results
