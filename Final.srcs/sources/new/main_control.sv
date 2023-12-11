@@ -65,13 +65,13 @@ controller(clk,RsRx,RsTx, bottom_button_l, bottom_button_r,top_button_l,top_butt
 //if score checker1 is enabled that means player 1(topbar) scored, so update  his score
 always_ff @(posedge clk_50, posedge reset)
 begin
-    if ((player1_score_digit1 == 9 && player1_score_digit2 == 9) || ( player2_score_digit1 == 9 && 9 == player2_score_digit2))
-    begin
-    end
-    else if ( reset == 1)
+    if ( reset == 1)
     begin
         player1_score_digit2 <= 0;
         player1_score_digit1 <= 0;
+    end
+    else if ((player1_score_digit1 == 9 && player1_score_digit2 == 9) || ( player2_score_digit1 == 9 && 9 == player2_score_digit2))
+    begin
     end
     else if (player1_score_digit1 == 9 && score_checker1 == 1)
     begin
@@ -88,13 +88,14 @@ end
 always_ff @(posedge clk_50, posedge reset)
 begin
     //  (player2_score_digit2 == 9 && player2_score_digit1 == 9 && score_checker2 == 1)||
-    if ((player1_score_digit1 == 9 && player1_score_digit2 == 9) || (player2_score_digit1 == 9 && 9 == player2_score_digit2))
-    begin
-    end
-    else if ( reset == 1)
+
+    if ( reset == 1)
     begin
         player2_score_digit2 <= 0;
         player2_score_digit1 <= 0;
+    end
+    else if ((player1_score_digit1 == 9 && player1_score_digit2 == 9) || (player2_score_digit1 == 9 && 9 == player2_score_digit2))
+    begin
     end
     else if (player2_score_digit1 == 9 && score_checker2 == 1)
     begin
